@@ -16,3 +16,5 @@ export const NAV_LINKS = [
     anchor: 'https://torre.co/en/messenger'
   }
 ];
+
+export const SEARCH_ENDPOINT = 'https://torre.bio/api/people?';
