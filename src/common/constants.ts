@@ -17,4 +17,4 @@ export const NAV_LINKS = [
   }
 ];
 
-export const SEARCH_ENDPOINT = 'https://torre.bio/api/people?';
+export const SEARCH_ENDPOINT = 'https://bio.torre.co/api/people?q=';

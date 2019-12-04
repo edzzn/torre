@@ -4,15 +4,18 @@ import { SearchResultContainer } from './styles';
 import UserCard from '../../../components/UserCard';
 
 export interface SearchResultProps {
-  // history: any;
-  // location: any;
+  users: User[];
 }
 
 class SearchResult extends React.Component<SearchResultProps, {}> {
   render() {
+    const user =
+      this.props.users && this.props.users.length > 0
+        ? this.props.users[0]
+        : null;
     return (
       <SearchResultContainer>
-        <UserCard user={} />
+        {user && <UserCard user={this.props.users[0]} />}
       </SearchResultContainer>
     );
   }
