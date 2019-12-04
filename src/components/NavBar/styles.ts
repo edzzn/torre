@@ -2,16 +2,16 @@ import styled from 'styled-components';
 import { COLOR_PALETTE } from '../../common/colors';
 
 export const Navbar = styled.nav`
-  min-height: 56px;
   width: 100%;
   background-color: ${COLOR_PALETTE.TORRE_GREY};
-  height: 60px;
+  /* background-color: red; */
+  height: 56px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 9;
-  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
 `;
 
 export const Container = styled.div`
