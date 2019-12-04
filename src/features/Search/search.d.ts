@@ -1,0 +1,31 @@
+declare type User = {
+  professionalHeadline: string;
+  completion: number;
+  showPhone: boolean;
+  verified: boolean;
+  flags: {
+    benefits: boolean;
+    canary: boolean;
+    enlauSource: boolean;
+    fake: boolean;
+    featureDiscovery: boolean;
+    firstSignalSent: boolean;
+    importingLinkedin: boolean;
+    onBoarded: boolean;
+    opportunitiesNotificationsSent: boolean;
+    remoter: boolean;
+    signalsFeatureDiscovery: boolean;
+    signedInToOpportunities: boolean;
+    importingLinkedinRecommendations: boolean;
+  };
+  weight: 2.0661;
+  locale: string;
+  subjectId: string;
+  picture: string;
+  hasEmail: boolean;
+  name: string;
+  links: [];
+  id: string;
+  claimant: true;
+  publicId: string;
+};
