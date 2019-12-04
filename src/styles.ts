@@ -5,5 +5,8 @@ export const AppContainer = styled.div`
 `;
 
 export const AppContent = styled.div`
-  padding-top: 56px;
+  display: flex;
+  height: 100vh;
+  flex: 1;
+  flex-direction: column;
 `;

@@ -1,4 +1,9 @@
 import * as React from 'react';
+import SectionTitle from '../../components/SectionTitle';
+import { SEARCH_PAGE } from '../../common/texts';
+import { SearchContainer } from './styles';
+import SearchSidebar from './SearchSideBar';
+import SearchResults from './SearchResult';
 
 export interface SearchProps {
   history: any;
@@ -7,7 +12,12 @@ export interface SearchProps {
 
 class Search extends React.Component<SearchProps, {}> {
   render() {
-    return <h1>Search </h1>;
+    return (
+      <SearchContainer>
+        <SearchSidebar />
+        <SearchResults />
+      </SearchContainer>
+    );
   }
 }
 
