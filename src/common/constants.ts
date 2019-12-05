@@ -18,3 +18,5 @@ export const NAV_LINKS = [
 ];
 
 export const SEARCH_ENDPOINT = 'https://bio.torre.co/api/people?q=';
+
+export const PROFILE_PICTURE_PLACEHOLDER = 'http://placekitten.com/g/70/70';
