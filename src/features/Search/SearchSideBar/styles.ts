@@ -12,7 +12,7 @@ export const SearchSidebarContainer = styled.div`
 export const SearchColumn = styled.div`
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
-  padding: 0.05rem;
+  overflow-y: auto;
+  padding: 30px 0 0 20px;
   height: calc(100% - 56px);
 `;

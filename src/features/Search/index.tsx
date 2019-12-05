@@ -18,19 +18,41 @@ export interface SearchProps {
   getUsersByName: (name: String, limit?: number) => void;
 }
 
-class Search extends React.Component<SearchProps, {}> {
+export interface SearchState {
+  searchTerm: string;
+}
+
+class Search extends React.Component<SearchProps, SearchState> {
+  constructor(props: SearchProps) {
+    super(props);
+    this.state = {
+      searchTerm: ''
+    };
+  }
+
   componentDidMount() {
     this.props.getUsersByName('', 10);
   }
 
+  onSearchTermChange = (newSearchTerm: string) => {
+    this.setState({
+      searchTerm: newSearchTerm
+    });
+  };
+
+  onSearchClick = () => {
+    console.log('TCL: Search -> onSearchClick -> onSearchClick');
+    this.props.getUsersByName(this.state.searchTerm);
+  };
+
   public render() {
     return (
       <SearchContainer>
-        <SearchSidebar>
-          <p onClick={() => this.props.getUsersByName('Edisson')}>
-            Click to search
-          </p>
-        </SearchSidebar>
+        <SearchSidebar
+          searchTerm={this.state.searchTerm}
+          onSearchTermChange={this.onSearchTermChange}
+          onSearchClick={this.onSearchClick}
+        />
         <SearchResults users={this.props.users} />
       </SearchContainer>
     );
