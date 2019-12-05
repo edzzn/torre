@@ -6,7 +6,7 @@ export const SearchSidebarContainer = styled.div`
   margin-top: 56px;
   margin-bottom: 56px;
   height: 100%;
-  width: 300px;
+  width: 400px;
 `;
 
 export const SearchColumn = styled.div`
