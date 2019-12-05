@@ -14,6 +14,7 @@ export interface SearchProps {
   location: any;
 
   users: User[];
+  isSearching: boolean;
 
   getUsersByName: (name: String, limit?: number) => void;
 }
@@ -53,7 +54,10 @@ class Search extends React.Component<SearchProps, SearchState> {
           onSearchTermChange={this.onSearchTermChange}
           onSearchClick={this.onSearchClick}
         />
-        <SearchResults users={this.props.users} />
+        <SearchResults
+          users={this.props.users}
+          isLoading={this.props.isSearching}
+        />
       </SearchContainer>
     );
   }
@@ -61,7 +65,8 @@ class Search extends React.Component<SearchProps, SearchState> {
 
 const mapStateToProps = (state: RootState) => {
   return {
-    users: state.search.users
+    users: state.search.users,
+    isSearching: state.search.isSearching
   };
 };
 

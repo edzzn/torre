@@ -17,3 +17,10 @@ export const ResultsColumn = styled.div`
   align-items: center;
   height: calc(100% - 56px);
 `;
+
+export const Centered = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;

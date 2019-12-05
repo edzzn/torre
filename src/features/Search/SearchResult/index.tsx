@@ -1,10 +1,11 @@
 import * as React from 'react';
-// import { SEARCH_PAGE } from '../../common/texts';
-import { SearchResultContainer, ResultsColumn } from './styles';
+import { SearchResultContainer, ResultsColumn, Centered } from './styles';
 import UserCard from '../../../components/UserCard';
+import { LOADING_IMAGE } from '../../../common/constants';
 
 export interface SearchResultProps {
   users: User[];
+  isLoading: boolean;
 }
 
 class SearchResult extends React.Component<SearchResultProps, {}> {
@@ -16,7 +17,15 @@ class SearchResult extends React.Component<SearchResultProps, {}> {
   render() {
     return (
       <SearchResultContainer>
-        <ResultsColumn>{this.props.users && this.renderUsers()}</ResultsColumn>
+        {this.props.isLoading ? (
+          <Centered>
+            <img src={LOADING_IMAGE} />
+          </Centered>
+        ) : (
+          <ResultsColumn>
+            {this.props.users && this.renderUsers()}
+          </ResultsColumn>
+        )}
       </SearchResultContainer>
     );
   }
