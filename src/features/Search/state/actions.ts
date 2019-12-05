@@ -1,8 +1,9 @@
 import * as Actions from './actionTypes';
 
-export const getUsersByName = (name: String) => ({
+export const getUsersByName = (name: String, limit?: number) => ({
   type: Actions.GET_USERS,
-  name
+  name,
+  limit
 });
 
 export const getUsersByNameSuccess = (users: User[]) => ({

@@ -9,7 +9,7 @@ export interface UserCardProps {
 const UserCard: React.FC<UserCardProps> = (props: UserCardProps) => {
   const weight = props.user.weight.toFixed(2);
   return (
-    <Styles.Card href={`https://bio.torre.co/en/${props.user.publicId}`}>
+    <Styles.Card href={`https://bio.torre.co/en/${props.user.username}`}>
       <Styles.CardHeader>
         {props.user.picture ? (
           <Styles.ProfilePicture src={props.user.picture} />

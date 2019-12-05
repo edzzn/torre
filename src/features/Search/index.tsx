@@ -15,22 +15,24 @@ export interface SearchProps {
 
   users: User[];
 
-  getUsersByName: (name: String) => void;
+  getUsersByName: (name: String, limit?: number) => void;
 }
 
 class Search extends React.Component<SearchProps, {}> {
+  componentDidMount() {
+    this.props.getUsersByName('', 10);
+  }
+
   public render() {
     return (
-      <>
-        <SearchContainer>
-          <SearchSidebar />
-          <SearchResults users={this.props.users} />
-        </SearchContainer>
-
-        <p>132</p>
-        <p>{JSON.stringify(this.props.users)}</p>
-        <p onClick={() => this.props.getUsersByName('Edisson')}>CLICK</p>
-      </>
+      <SearchContainer>
+        <SearchSidebar>
+          <p onClick={() => this.props.getUsersByName('Edisson')}>
+            Click to search
+          </p>
+        </SearchSidebar>
+        <SearchResults users={this.props.users} />
+      </SearchContainer>
     );
   }
 }
@@ -43,8 +45,8 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = (dispatch: Function) => {
   return {
-    getUsersByName: (name: String) => {
-      dispatch(getUsersByName(name));
+    getUsersByName: (name: String, limit?: number) => {
+      dispatch(getUsersByName(name, limit));
     }
   };
 };
