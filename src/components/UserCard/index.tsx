@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Styles from './styles';
+import { PROFILE_PICTURE_PLACEHOLDER } from '../../common/constants';
 
 export interface UserCardProps {
   user: User;
@@ -8,9 +9,14 @@ export interface UserCardProps {
 const UserCard: React.FC<UserCardProps> = (props: UserCardProps) => {
   const weight = props.user.weight.toFixed(2);
   return (
-    <Styles.Card href={`https://bio.torre.co/en/${props.user.publicId}`}>
+    <Styles.Card href={`https://bio.torre.co/en/${props.user.username}`}>
       <Styles.CardHeader>
-        <Styles.ProfilePicture src={props.user.picture} />
+        {props.user.picture ? (
+          <Styles.ProfilePicture src={props.user.picture} />
+        ) : (
+          <Styles.ProfilePicture src={PROFILE_PICTURE_PLACEHOLDER} />
+        )}
+
         <Styles.CardHeaderInfo>
           <Styles.UserName>
             {props.user.name} {weight}

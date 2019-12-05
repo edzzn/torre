@@ -1,18 +1,13 @@
 import * as React from 'react';
-// import { SEARCH_PAGE } from '../../common/texts';
-import { SearchSidebarContainer } from './styles';
+import { SearchSidebarContainer, SearchColumn } from './styles';
 
-export interface SearchSidebarProps {
-  // history: any;
-  // location: any;
-}
+export interface SearchSidebarProps {}
 
 class SearchSidebar extends React.Component<SearchSidebarProps, {}> {
   render() {
     return (
       <SearchSidebarContainer>
-        <p>Search input</p>
-        <p>Search input</p>
+        <SearchColumn>{this.props.children}</SearchColumn>
       </SearchSidebarContainer>
     );
   }

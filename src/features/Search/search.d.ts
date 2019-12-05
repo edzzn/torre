@@ -1,4 +1,17 @@
 declare type User = {
+  id?: string;
+  locationName: string;
+  username: string;
+  name: string;
+  picture: string;
+  professionalHeadline: string;
+  remoter: boolean;
+  skills: Skill[];
+  weight: number;
+  verified: boolean;
+};
+
+declare type UserPeopleAPI = {
   professionalHeadline: string;
   completion: number;
   showPhone: boolean;
@@ -18,7 +31,7 @@ declare type User = {
     signedInToOpportunities: boolean;
     importingLinkedinRecommendations: boolean;
   };
-  weight: 2.0661;
+  weight: number;
   locale: string;
   subjectId: string;
   picture: string;
@@ -28,4 +41,44 @@ declare type User = {
   id: string;
   claimant: true;
   publicId: string;
+};
+
+declare type UserSearchAPI = {
+  aggregators?: any;
+  offset: number;
+  results: UserAPIResult[];
+  size: number;
+  total: number;
+};
+
+declare type UserAPIResult = {
+  context: Context;
+  compensation: Compensation[];
+  locationName: string;
+  name: string;
+  openTo: string[];
+  picture: string;
+  professionalHeadline: string;
+  remoter: boolean;
+  skills: Skill[];
+  subjectId: string;
+  username: string;
+  weight: number;
+  verified: boolean;
+};
+
+declare type Context = {
+  signaled: any;
+};
+
+declare type Compensation = {
+  amount: number;
+  currency: string;
+  periodicity: string;
+};
+
+declare type Skill = {
+  code: number;
+  name: string;
+  weight: number;
 };

@@ -4,6 +4,7 @@ import { COLOR_PALETTE } from '../../common/colors';
 export const Card = styled.a`
   text-decoration: none;
   width: 720px;
+  min-height: 100px;
   border-radius: 2px;
   display: flex;
   flex-direction: column;
@@ -11,7 +12,7 @@ export const Card = styled.a`
   background-color: white;
   position: relative;
   z-index: 1;
-  margin-top: 20px;
+  margin: 20px 0;
   padding: 20px;
 `;
 

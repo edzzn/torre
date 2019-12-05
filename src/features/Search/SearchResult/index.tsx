@@ -1,18 +1,22 @@
 import * as React from 'react';
 // import { SEARCH_PAGE } from '../../common/texts';
-import { SearchResultContainer } from './styles';
+import { SearchResultContainer, ResultsColumn } from './styles';
 import UserCard from '../../../components/UserCard';
 
 export interface SearchResultProps {
-  // history: any;
-  // location: any;
+  users: User[];
 }
 
 class SearchResult extends React.Component<SearchResultProps, {}> {
+  renderUsers = () => {
+    const userCards = this.props.users.map(user => <UserCard user={user} />);
+    return userCards;
+  };
+
   render() {
     return (
       <SearchResultContainer>
-        <UserCard user={} />
+        <ResultsColumn>{this.props.users && this.renderUsers()}</ResultsColumn>
       </SearchResultContainer>
     );
   }
