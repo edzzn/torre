@@ -1,6 +1,6 @@
 import * as React from 'react';
 // import { SEARCH_PAGE } from '../../common/texts';
-import { SearchResultContainer } from './styles';
+import { SearchResultContainer, ResultsColumn } from './styles';
 import UserCard from '../../../components/UserCard';
 
 export interface SearchResultProps {
@@ -8,14 +8,15 @@ export interface SearchResultProps {
 }
 
 class SearchResult extends React.Component<SearchResultProps, {}> {
+  renderUsers = () => {
+    const userCards = this.props.users.map(user => <UserCard user={user} />);
+    return userCards;
+  };
+
   render() {
-    const user =
-      this.props.users && this.props.users.length > 0
-        ? this.props.users[0]
-        : null;
     return (
       <SearchResultContainer>
-        {user && <UserCard user={this.props.users[0]} />}
+        <ResultsColumn>{this.props.users && this.renderUsers()}</ResultsColumn>
       </SearchResultContainer>
     );
   }
