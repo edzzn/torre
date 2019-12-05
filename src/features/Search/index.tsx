@@ -57,6 +57,7 @@ class Search extends React.Component<SearchProps, SearchState> {
         <SearchResults
           users={this.props.users}
           isLoading={this.props.isSearching}
+          searchTerm={this.state.searchTerm}
         />
       </SearchContainer>
     );

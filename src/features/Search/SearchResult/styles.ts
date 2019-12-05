@@ -24,3 +24,36 @@ export const Centered = styled.div`
   justify-content: center;
   height: 100vh;
 `;
+
+export const EmptyStateContainer = styled.div`
+  width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  margin: 32px;
+  padding: 32px;
+`;
+
+export interface EmptyStateLabelProps {
+  highlighted?: boolean;
+}
+
+export const EmptyStateLabel = styled.span`
+  font-size: 20px;
+  line-height: 2;
+  letter-spacing: 2px;
+  font-weight: ${(props: EmptyStateLabelProps) =>
+    props.highlighted ? 'bold' : 'normal'};
+  font-style: ${(props: EmptyStateLabelProps) =>
+    props.highlighted ? 'italic' : 'normal'};
+`;
+
+export const EmptyStateImageContainer = styled.div`
+  display: flex;
+  margin-top: 20px;
+`;
+
+export const EmptyStateImage = styled.img`
+  display: flex;
+`;

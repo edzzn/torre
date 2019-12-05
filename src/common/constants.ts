@@ -24,3 +24,6 @@ export const PROFILE_PICTURE_PLACEHOLDER = 'http://placekitten.com/g/70/70';
 
 export const LOADING_IMAGE =
   'https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif';
+
+export const NO_USER_FOUND_IMAGE =
+  'https://media.giphy.com/media/3o7aTskHEUdgCQAXde/giphy.gif';

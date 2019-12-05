@@ -1,17 +1,42 @@
 import * as React from 'react';
-import { SearchResultContainer, ResultsColumn, Centered } from './styles';
+import {
+  SearchResultContainer,
+  ResultsColumn,
+  Centered,
+  EmptyStateContainer,
+  EmptyStateLabel,
+  EmptyStateImageContainer,
+  EmptyStateImage
+} from './styles';
 import UserCard from '../../../components/UserCard';
-import { LOADING_IMAGE } from '../../../common/constants';
+import { LOADING_IMAGE, NO_USER_FOUND_IMAGE } from '../../../common/constants';
+import { SEARCH_EMPTY_STATE } from '../../../common/texts';
 
 export interface SearchResultProps {
   users: User[];
   isLoading: boolean;
+  searchTerm: string;
 }
 
 class SearchResult extends React.Component<SearchResultProps, {}> {
   renderUsers = () => {
     const userCards = this.props.users.map(user => <UserCard user={user} />);
     return userCards;
+  };
+
+  renderEmptyState = () => {
+    return (
+      <EmptyStateContainer>
+        <EmptyStateLabel>
+          {SEARCH_EMPTY_STATE.TITLE}
+          <EmptyStateLabel highlighted>{this.props.searchTerm}</EmptyStateLabel>
+        </EmptyStateLabel>
+        <EmptyStateLabel> {SEARCH_EMPTY_STATE.DESCRIPTION}</EmptyStateLabel>
+        <EmptyStateImageContainer>
+          <EmptyStateImage src={NO_USER_FOUND_IMAGE} />
+        </EmptyStateImageContainer>
+      </EmptyStateContainer>
+    );
   };
 
   render() {
@@ -23,7 +48,9 @@ class SearchResult extends React.Component<SearchResultProps, {}> {
           </Centered>
         ) : (
           <ResultsColumn>
-            {this.props.users && this.renderUsers()}
+            {this.props.users && this.props.users.length > 0
+              ? this.renderUsers()
+              : this.renderEmptyState()}
           </ResultsColumn>
         )}
       </SearchResultContainer>
