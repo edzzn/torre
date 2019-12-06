@@ -7,6 +7,10 @@ export const SearchSidebarContainer = styled.div`
   margin-bottom: 56px;
   height: 100%;
   width: 400px;
+
+  background: linear-gradient(0deg, #fff 0, hsla(0, 0%, 100%, 0) 25%),
+    url('https://torre.co/img/landing-background.210aab48.png') 35% #fff;
+  background-size: 150%;
 `;
 
 export const SearchColumn = styled.div`

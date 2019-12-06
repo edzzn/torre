@@ -4,9 +4,9 @@ import { COLOR_PALETTE } from '../../../common/colors';
 export const SearchResultContainer = styled.div`
   position: fixed;
   margin-top: 56px;
-  margin-left: 400px;
+  margin-left: 300px;
   height: 100%;
-  width: calc(100% - 400px);
+  width: calc(100% - 300px);
   background-color: ${COLOR_PALETTE.LIGHT_BLUE};
 `;
 
