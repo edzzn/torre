@@ -4,7 +4,6 @@ import { COLOR_PALETTE } from '../../common/colors';
 export const Navbar = styled.nav`
   width: 100%;
   background-color: ${COLOR_PALETTE.TORRE_GREY};
-  /* background-color: red; */
   height: 56px;
   position: fixed;
   top: 0;
@@ -24,6 +23,7 @@ export const Container = styled.div`
 `;
 
 export const Logo = styled.div`
+  cursor: pointer;
   margin: 0 10px;
   color: #333;
   text-decoration: none;
@@ -47,6 +47,7 @@ export const NavLinkContainer = styled.div`
 `;
 
 export const NavLinkItem = styled.div`
+  cursor: pointer;
   min-width: 64px;
   height: 60px;
   width: 100px;

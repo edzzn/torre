@@ -42,7 +42,6 @@ class Search extends React.Component<SearchProps, SearchState> {
   };
 
   onSearchClick = () => {
-    console.log('TCL: Search -> onSearchClick -> onSearchClick');
     this.props.getUsersByName(this.state.searchTerm);
   };
 
