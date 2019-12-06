@@ -32,7 +32,7 @@ export const CardContent = styled.div`
 
 export const UserName = styled.span`
   font-size: 16px;
-  color: #00acc1 !important;
+  color: ${COLOR_PALETTE.TORRE_BLUE};
   flex-grow: 1;
   overflow: hidden;
   text-overflow: ellipsis;

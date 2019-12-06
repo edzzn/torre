@@ -29,9 +29,13 @@ const searchReducer: Reducer<SearchState> = (
       };
     }
     case GET_USERS_SUCCESS: {
-      const users: User[] = action.users;
-
+      let users: User[] = action.users;
+      const hasOffset: User[] = action.hasOffset;
+      debugger;
       if (users && users.length) {
+        if (hasOffset) {
+          users = users.concat(state.users);
+        }
         return {
           ...state,
           users: users,

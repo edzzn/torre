@@ -6,7 +6,9 @@ import { APP_NAME } from '../../common/texts';
 export class NavBarComponent extends React.Component {
   renderNavLinks = () => {
     return NAV_LINKS.map(link => {
-      return <Styles.NavLinkItem>{link.label}</Styles.NavLinkItem>;
+      return (
+        <Styles.NavLinkItem key={link.anchor}>{link.label}</Styles.NavLinkItem>
+      );
     });
   };
 

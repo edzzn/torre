@@ -57,3 +57,17 @@ export const EmptyStateImageContainer = styled.div`
 export const EmptyStateImage = styled.img`
   display: flex;
 `;
+
+export const LoadMoreButton = styled.span`
+  color: ${COLOR_PALETTE.TORRE_BLUE};
+  background-color: ${COLOR_PALETTE.WHITE};
+  margin: 0 0 20px 0px;
+  font-size: 20px;
+  padding: 7px 16px;
+  vertical-align: center;
+  text-transform: uppercase;
+  vertical-align: middle;
+  cursor: pointer;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12);
+`;

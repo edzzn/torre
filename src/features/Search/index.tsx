@@ -16,7 +16,7 @@ export interface SearchProps {
   users: User[];
   isSearching: boolean;
 
-  getUsersByName: (name: String, limit?: number) => void;
+  getUsersByName: (name: String, offset?: number, limit?: number) => void;
 }
 
 export interface SearchState {
@@ -45,6 +45,11 @@ class Search extends React.Component<SearchProps, SearchState> {
     this.props.getUsersByName(this.state.searchTerm);
   };
 
+  loadMoreUsers = () => {
+    const offset = this.props.users.length;
+    this.props.getUsersByName(this.state.searchTerm, offset);
+  };
+
   public render() {
     return (
       <SearchContainer>
@@ -57,6 +62,7 @@ class Search extends React.Component<SearchProps, SearchState> {
           users={this.props.users}
           isLoading={this.props.isSearching}
           searchTerm={this.state.searchTerm}
+          onLoadMoreUsers={this.loadMoreUsers}
         />
       </SearchContainer>
     );
@@ -72,8 +78,8 @@ const mapStateToProps = (state: RootState) => {
 
 const mapDispatchToProps = (dispatch: Function) => {
   return {
-    getUsersByName: (name: String, limit?: number) => {
-      dispatch(getUsersByName(name, limit));
+    getUsersByName: (name: String, offset?: number, limit?: number) => {
+      dispatch(getUsersByName(name, offset, limit));
     }
   };
 };

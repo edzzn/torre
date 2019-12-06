@@ -21,7 +21,7 @@ export const InputContainer = styled.div`
 `;
 
 export const SubmitButton = styled.span`
-  color: #00acc1;
+  color: ${COLOR_PALETTE.TORRE_BLUE};
   margin: 0 0 0 8px;
   font-size: 20px;
   padding: 7px 16px;
