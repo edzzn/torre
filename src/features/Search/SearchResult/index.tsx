@@ -20,7 +20,9 @@ export interface SearchResultProps {
 
 class SearchResult extends React.Component<SearchResultProps, {}> {
   renderUsers = () => {
-    const userCards = this.props.users.map(user => <UserCard user={user} />);
+    const userCards = this.props.users.map(user => (
+      <UserCard key={user.username} user={user} />
+    ));
     return userCards;
   };
 
