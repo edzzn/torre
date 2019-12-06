@@ -6,16 +6,19 @@ import {
   EmptyStateContainer,
   EmptyStateLabel,
   EmptyStateImageContainer,
-  EmptyStateImage
+  EmptyStateImage,
+  LoadMoreButton
 } from './styles';
 import UserCard from '../../../components/UserCard';
 import { LOADING_IMAGE, NO_USER_FOUND_IMAGE } from '../../../common/constants';
-import { SEARCH_EMPTY_STATE } from '../../../common/texts';
+import { SEARCH_EMPTY_STATE, SEARCH_RESULT_STATE } from '../../../common/texts';
 
 export interface SearchResultProps {
   users: User[];
   isLoading: boolean;
   searchTerm: string;
+
+  onLoadMoreUsers: () => void;
 }
 
 class SearchResult extends React.Component<SearchResultProps, {}> {
@@ -50,9 +53,17 @@ class SearchResult extends React.Component<SearchResultProps, {}> {
           </Centered>
         ) : (
           <ResultsColumn>
-            {this.props.users && this.props.users.length > 0
-              ? this.renderUsers()
-              : this.renderEmptyState()}
+            {this.props.users && this.props.users.length > 0 ? (
+              <>
+                {this.renderUsers()}
+
+                <LoadMoreButton onClick={() => this.props.onLoadMoreUsers()}>
+                  {SEARCH_RESULT_STATE.LOAD_MORE}
+                </LoadMoreButton>
+              </>
+            ) : (
+              this.renderEmptyState()
+            )}
           </ResultsColumn>
         )}
       </SearchResultContainer>
