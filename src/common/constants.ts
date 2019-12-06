@@ -17,6 +17,10 @@ export const NAV_LINKS = [
   }
 ];
 
+export const KEYS = {
+  ENTER: 'Enter'
+};
+
 export const PEOPLE_ENDPOINT = 'https://bio.torre.co/api/people?q=';
 export const SEARCH_ENDPOINT = 'https://search.torre.co/people/_search/';
 

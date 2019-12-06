@@ -5,6 +5,7 @@ import {
   InputContainer,
   SearchBoxInput
 } from './styles';
+import { KEYS } from '../../common/constants';
 
 export interface SearchInputProps {
   value?: string;
@@ -21,9 +22,19 @@ export class SearchInput extends React.Component<SearchInputProps> {
     }
   };
 
+  onKeyPress = (event: any) => {
+    if (event && event.key) {
+      switch (event.key) {
+        case KEYS.ENTER:
+          this.props.onSubmit();
+          break;
+      }
+    }
+  };
+
   render() {
     return (
-      <InputField>
+      <InputField onKeyDown={this.onKeyPress}>
         <InputContainer>
           <SearchBoxInput
             placeholder='Search...'
